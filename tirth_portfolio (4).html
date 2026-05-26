@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tirth Dhoria — Marketing & Content Professional</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --c0:#F8F4EE;--c1:#E8DCCF;--c2:#DCCBB8;--c3:#B8A18C;--c4:#4A3B31;
+  --te:#C97C5D;--go:#C9A46A;--ol:#7A8B6F;
+  --txt:#2C1F17;--mut:#7A6655;--dim:#A89380;
+  --bd:rgba(74,59,49,0.1);--bds:rgba(74,59,49,0.06);
+  --sh:0 2px 16px rgba(74,59,49,0.07);--shl:0 8px 36px rgba(74,59,49,0.11);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--c0);color:var(--txt);overflow-x:hidden;line-height:1.6;font-size:16px}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:var(--c3);border-radius:2px}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.016;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.rv.on{opacity:1;transform:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;padding:0 3rem;display:flex;align-items:center;justify-content:space-between;background:rgba(248,244,238,.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);transition:background .3s}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:800;color:var(--c4);text-decoration:none;letter-spacing:-.01em}
+.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
+.nav-links a{color:var(--mut);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.02em;transition:color .2s}
+.nav-links a:hover{color:var(--c4)}
+.nav-cta{padding:.35rem 1rem;border:1.5px solid var(--c3)!important;border-radius:20px;color:var(--c4)!important}
+.nav-cta:hover{background:var(--c4)!important;color:var(--c0)!important;border-color:var(--c4)!important}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hbg span{display:block;width:20px;height:1.5px;background:var(--mut);border-radius:2px;transition:.25s}
+.mob{display:none;position:fixed;top:58px;left:0;right:0;background:rgba(248,244,238,.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);padding:1.2rem 2rem;z-index:199;flex-direction:column;gap:.8rem}
+.mob a{color:var(--mut);text-decoration:none;font-size:.88rem;font-weight:500;padding:.28rem 0;border-bottom:1px solid var(--bds);transition:color .2s}
+.mob a:hover{color:var(--te)}
+.mob.open{display:flex}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:5rem;padding:7rem 4rem 5rem;background:var(--c0);position:relative;overflow:hidden}
+.hero-glow{position:absolute;top:-80px;right:-60px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(201,164,106,.09),transparent 65%);filter:blur(55px);pointer-events:none}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,5vw,4.5rem);font-weight:900;line-height:.97;letter-spacing:-.03em;color:var(--c4);margin-bottom:.6rem}
+.hero-sub{font-size:clamp(.9rem,1.4vw,1.05rem);font-weight:600;color:var(--te);letter-spacing:.01em;margin-bottom:1rem;padding-left:2px}
+.hero-line{width:36px;height:2px;background:linear-gradient(to right,var(--go),transparent);margin-bottom:1.1rem}
+.hero-desc{font-size:.88rem;color:var(--mut);line-height:1.82;max-width:420px;margin-bottom:1.8rem}
+.hero-pills{display:flex;gap:.38rem;flex-wrap:wrap;margin-bottom:2rem}
+.pill{font-size:.65rem;border:1px solid var(--bd);padding:.2rem .68rem;border-radius:20px;color:var(--mut);font-weight:500;transition:all .2s}
+.pill:hover{border-color:var(--te);color:var(--te)}
+.hero-btns{display:flex;gap:.6rem;flex-wrap:wrap}
+.btn-p{background:var(--c4);color:var(--c0);padding:.68rem 1.45rem;border-radius:22px;text-decoration:none;font-weight:700;font-size:.79rem;border:none;cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:.35rem;white-space:nowrap}
+.btn-p:hover{background:var(--te);transform:translateY(-1px);box-shadow:0 6px 20px rgba(74,59,49,.16)}
+.btn-o{background:transparent;border:1.5px solid var(--c3);color:var(--c4);padding:.66rem 1.35rem;border-radius:22px;text-decoration:none;font-weight:600;font-size:.79rem;cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:.35rem;white-space:nowrap}
+.btn-o:hover{background:var(--c4);color:var(--c0);border-color:var(--c4)}
+
+/* PHOTO */
+.hero-photo-wrap{display:flex;align-items:center;justify-content:center}
+.photo-card{background:var(--c1);border-radius:18px;overflow:hidden;box-shadow:var(--shl);max-width:300px;width:100%;position:relative}
+.photo-card img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top center;display:block;transition:transform .5s}
+.photo-card:hover img{transform:scale(1.02)}
+.photo-caption{padding:.6rem 1rem;background:var(--c0);display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--bd)}
+.pc-name{font-family:'Playfair Display',serif;font-size:.82rem;font-weight:700;color:var(--c4)}
+.pc-tag{font-size:.58rem;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);font-weight:600}
+.photo-fallback{display:none;width:100%;aspect-ratio:3/4;background:linear-gradient(160deg,var(--c1),var(--c2));align-items:center;justify-content:center;flex-direction:column;gap:.5rem}
+.photo-fallback span{font-size:.72rem;color:var(--mut);font-weight:500}
+
+/* STAT BAR */
+.stat-bar{background:var(--c1);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:1.4rem 4rem;display:flex;gap:3rem;flex-wrap:wrap;justify-content:center;align-items:center}
+.stat{text-align:center}
+.stat-n{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--te);line-height:1}
+.stat-l{font-size:.6rem;color:var(--mut);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:.2rem}
+
+/* SECTIONS */
+section{padding:5.5rem 4rem}
+.cw{max-width:1100px;margin:0 auto}
+.sec-label{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--te);font-weight:700;margin-bottom:.55rem;display:flex;align-items:center;gap:.45rem}
+.sec-label::before{content:'';width:14px;height:1px;background:var(--te)}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.8vw,2.3rem);font-weight:800;line-height:1.15;letter-spacing:-.02em;margin-bottom:.65rem;color:var(--c4)}
+.sec-sub{color:var(--mut);font-size:.85rem;line-height:1.8;max-width:450px;margin-bottom:2.4rem}
+.divider{height:1px;background:linear-gradient(to right,transparent,var(--bd),transparent);margin:0 4rem}
+
+/* ACHIEVEMENTS */
+#achievements{background:var(--c1)}
+.ach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem}
+.ach-card{background:var(--c0);border:1px solid var(--bd);border-radius:14px;padding:1.5rem;transition:all .28s;box-shadow:var(--sh);position:relative;overflow:hidden}
+.ach-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2.5px;background:linear-gradient(to right,var(--te),var(--go))}
+.ach-card:hover{transform:translateY(-3px);box-shadow:var(--shl)}
+.ach-ico{font-size:1.4rem;margin-bottom:.6rem}
+.ach-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--te);line-height:1;margin-bottom:.22rem}
+.ach-title{font-size:.82rem;font-weight:700;color:var(--c4);margin-bottom:.28rem}
+.ach-desc{font-size:.74rem;color:var(--mut);line-height:1.7}
+
+/* SKILLS */
+#skills{background:var(--c0)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.skill-group{background:var(--c1);border:1px solid var(--bd);border-radius:14px;padding:1.5rem;box-shadow:var(--sh)}
+.sg-label{font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:var(--te);font-weight:700;margin-bottom:.8rem;padding-bottom:.5rem;border-bottom:1px solid var(--bd)}
+.sg-items{display:flex;flex-direction:column;gap:.38rem}
+.sg-item{font-size:.78rem;color:var(--mut);padding-left:.85rem;position:relative;line-height:1.5}
+.sg-item::before{content:'';position:absolute;left:0;top:.55em;width:3.5px;height:3.5px;border-radius:50%;background:var(--go)}
+
+/* EXPERIENCE */
+#experience{background:var(--c1)}
+.exp-list{display:flex;flex-direction:column;gap:1.1rem}
+.exp-card{background:var(--c0);border:1px solid var(--bd);border-radius:14px;padding:1.8rem 2rem;transition:all .28s;box-shadow:var(--sh);position:relative;overflow:hidden}
+.exp-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(to bottom,var(--te),rgba(201,164,106,.2))}
+.exp-card:hover{box-shadow:var(--shl);border-color:rgba(201,124,93,.2)}
+.exp-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.7rem;flex-wrap:wrap}
+.exp-role{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:800;color:var(--c4)}
+.exp-meta{font-size:.72rem;color:var(--te);font-weight:700;text-align:right;white-space:nowrap;letter-spacing:.01em}
+.exp-co{font-size:.78rem;color:var(--mut);font-weight:600;margin-bottom:.75rem}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:.38rem}
+.exp-bullets li{font-size:.79rem;color:var(--mut);line-height:1.72;padding-left:1rem;position:relative}
+.exp-bullets li::before{content:'';position:absolute;left:0;top:.62em;width:4px;height:4px;border-radius:50%;background:var(--te);flex-shrink:0}
+.exp-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.9rem}
+.etag{background:rgba(201,124,93,.09);border:1px solid rgba(201,124,93,.16);color:var(--te);font-size:.59rem;padding:.14rem .5rem;border-radius:4px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+
+/* EDUCATION */
+#education{background:var(--c0)}
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1rem;margin-bottom:2rem}
+.edu-card{background:var(--c1);border:1px solid var(--bd);border-radius:14px;padding:1.7rem;box-shadow:var(--sh);transition:all .28s;position:relative;overflow:hidden}
+.edu-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2.5px;background:linear-gradient(to right,var(--ol),var(--go))}
+.edu-card:hover{transform:translateY(-2px);box-shadow:var(--shl)}
+.edu-ico{font-size:1.3rem;margin-bottom:.6rem}
+.edu-period{font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ol);font-weight:700;margin-bottom:.3rem}
+.edu-deg{font-family:'Playfair Display',serif;font-size:.98rem;font-weight:800;color:var(--c4);margin-bottom:.15rem}
+.edu-inst{font-size:.77rem;font-weight:600;color:var(--mut);margin-bottom:.5rem}
+.edu-desc{font-size:.74rem;color:var(--mut);line-height:1.72}
+.edu-tags{display:flex;flex-wrap:wrap;gap:.28rem;margin-top:.8rem}
+.edu-tag{background:rgba(122,139,111,.1);border:1px solid rgba(122,139,111,.2);color:var(--ol);font-size:.58rem;padding:.12rem .5rem;border-radius:4px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.certs-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--c4);margin-bottom:1rem}
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:.7rem}
+.cert-card{background:var(--c1);border:1px solid var(--bd);border-radius:11px;padding:1.1rem 1.2rem;transition:all .25s;box-shadow:var(--sh)}
+.cert-card:hover{transform:translateY(-2px);border-color:rgba(201,164,106,.3)}
+.cert-issuer{font-size:.59rem;text-transform:uppercase;letter-spacing:.1em;color:var(--te);font-weight:700;margin-bottom:.25rem}
+.cert-name{font-size:.82rem;font-weight:600;color:var(--c4);margin-bottom:.14rem}
+.cert-date{font-size:.64rem;color:var(--dim)}
+
+/* INSIGHTS BLOG */
+#insights{background:var(--c1)}
+.insights-grid{display:grid;grid-template-columns:1fr;gap:1.4rem}
+.blog-card{background:var(--c0);border:1px solid var(--bd);border-radius:14px;overflow:hidden;box-shadow:var(--sh);transition:all .28s}
+.blog-card:hover{box-shadow:var(--shl);border-color:rgba(201,124,93,.2)}
+.blog-header{padding:1.8rem 2rem 1rem;display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;cursor:pointer}
+.blog-title{font-family:'Playfair Display',serif;font-size:1.08rem;font-weight:800;color:var(--c4);line-height:1.32;flex:1}
+.blog-meta{font-size:.68rem;color:var(--te);font-weight:700;white-space:nowrap;letter-spacing:.04em;text-transform:uppercase;background:rgba(201,124,93,.1);padding:.22rem .6rem;border-radius:20px;border:1px solid rgba(201,124,93,.18);height:fit-content}
+.blog-excerpt{padding:0 2rem .5rem;font-size:.81rem;color:var(--mut);line-height:1.72;cursor:pointer}
+.blog-content{padding:0 2rem 1.5rem;font-size:.78rem;color:var(--mut);line-height:1.82;display:none;max-height:600px;overflow-y:auto}
+.blog-content.show{display:block}
+.blog-content p{margin-bottom:.75rem}
+.blog-content h3{font-family:'Playfair Display',serif;font-size:.93rem;font-weight:800;color:var(--c4);margin:1.3rem 0 .5rem;padding-top:.5rem;border-top:1px solid var(--bds)}
+.blog-content h4{font-size:.82rem;font-weight:700;color:var(--te);margin:.9rem 0 .35rem}
+.blog-content ul{list-style:none;padding-left:0;margin:.5rem 0 .8rem}
+.blog-content li{padding-left:1.1rem;position:relative;margin-bottom:.32rem;font-size:.77rem}
+.blog-content li::before{content:'→';position:absolute;left:0;color:var(--te);font-weight:700;font-size:.7rem;top:.05em}
+.blog-content strong{color:var(--c4);font-weight:600}
+.blog-content em{font-style:italic}
+.blog-footer{padding:1rem 2rem;border-top:1px solid var(--bds);display:flex;justify-content:space-between;align-items:center;background:rgba(232,220,207,.35)}
+.blog-toggle{background:transparent;border:none;color:var(--te);font-weight:700;font-size:.72rem;cursor:pointer;text-transform:uppercase;letter-spacing:.07em;transition:color .2s;display:flex;align-items:center;gap:.35rem}
+.blog-toggle:hover{color:var(--c4)}
+.blog-toggle.open::after{transform:rotate(180deg)}
+.blog-stats{font-size:.66rem;color:var(--dim);font-weight:500}
+
+/* CONTACT */
+#contact{background:var(--c0);text-align:center}
+.contact-box{max-width:560px;margin:0 auto;background:var(--c1);border:1px solid var(--bd);border-radius:20px;padding:3rem;box-shadow:var(--shl);position:relative;overflow:hidden}
+.contact-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--te),var(--go))}
+.contact-email{font-family:'Playfair Display',serif;font-size:clamp(.9rem,2vw,1.3rem);font-weight:700;color:var(--te);text-decoration:none;display:block;margin-bottom:1.6rem;transition:color .2s}
+.contact-email:hover{color:var(--c4)}
+.clinks{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.2rem}
+.clink{background:var(--c0);border:1px solid var(--bd);color:var(--mut);padding:.55rem 1rem;border-radius:20px;text-decoration:none;font-size:.75rem;font-weight:600;transition:all .25s;display:flex;align-items:center;gap:.35rem}
+.clink:hover{color:var(--te);border-color:var(--te)}
+.contact-loc{font-size:.66rem;color:var(--dim)}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(44,31,23,.6);z-index:500;backdrop-filter:blur(8px);overflow-y:auto;padding:2.5rem 1rem}
+.modal-overlay.open{display:flex;align-items:flex-start;justify-content:center}
+.modal{background:var(--c0);border-radius:18px;max-width:700px;width:100%;box-shadow:0 24px 64px rgba(44,31,23,.2);overflow:hidden;animation:min .3s ease}
+@keyframes min{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.modal-head{background:var(--c1);padding:1.2rem 1.8rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--bd)}
+.modal-head h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:800;color:var(--c4)}
+.mcls{background:none;border:none;font-size:1.25rem;cursor:pointer;color:var(--mut);transition:color .2s}
+.mcls:hover{color:var(--te)}
+.modal-body{padding:1.8rem 2rem}
+.r-name{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--c4);margin-bottom:.18rem}
+.r-role{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--te);font-weight:700;margin-bottom:.4rem}
+.r-contact{font-size:.72rem;color:var(--mut);line-height:1.8;margin-bottom:.35rem}
+.rdv{height:1px;background:var(--bd);margin:.9rem 0}
+.rs{font-size:.72rem;font-weight:800;color:var(--c4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.55rem}
+.rp{font-size:.75rem;color:var(--mut);line-height:1.8;margin-bottom:.7rem}
+.rj{margin-bottom:.9rem}
+.rjt{font-size:.82rem;font-weight:700;color:var(--c4)}
+.rjc{font-size:.7rem;color:var(--te);font-weight:600;margin-bottom:.15rem}
+.rjd{font-size:.72rem;color:var(--mut);line-height:1.75;padding-left:1rem;list-style:none}
+.rjd li{margin-bottom:.18rem;position:relative}
+.rjd li::before{content:'';position:absolute;left:-1rem;top:.58em;width:3.5px;height:3.5px;border-radius:50%;background:var(--te)}
+.rsk{display:flex;flex-wrap:wrap;gap:.3rem}
+.rskp{background:var(--c1);border:1px solid var(--bd);padding:.16rem .55rem;border-radius:10px;font-size:.65rem;color:var(--mut);font-weight:500}
+.mfoot{padding:1rem 1.8rem;background:var(--c1);border-top:1px solid var(--bd);display:flex;gap:.65rem;justify-content:flex-end}
+
+footer{background:var(--c4);padding:1.6rem 3rem;display:flex;align-items:center;justify-content:space-between;font-size:.72rem;color:var(--c3)}
+footer span{color:var(--go)}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .nav-links{display:none}.hbg{display:flex}
+  section{padding:4rem 1.6rem}
+  .hero{grid-template-columns:1fr;gap:2.5rem;padding:7rem 1.6rem 4rem;min-height:auto}
+  .hero-glow{display:none}
+  .hero-name{font-size:clamp(2.4rem,10vw,3.6rem)}
+  .hero-photo-wrap{justify-content:flex-start}
+  .photo-card{max-width:240px}
+  .stat-bar{gap:1.5rem;padding:1.3rem 2rem}
+  .ach-grid{grid-template-columns:1fr 1fr}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .divider{margin:0 1.6rem}
+  footer{flex-direction:column;gap:.4rem;text-align:center;padding:1.3rem}
+  .modal-body{padding:1.4rem 1.5rem}
+  .mfoot{padding:.9rem 1.5rem}
+}
+@media(max-width:520px){
+  .hero-btns{flex-direction:column;align-items:flex-start}
+  .btn-p,.btn-o{width:100%;justify-content:center}
+  .ach-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr}
+  .stat-bar{gap:1.2rem}
+  .contact-box{padding:2rem 1.2rem}
+  .clinks{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#home" class="nav-logo">Tirth Dhoria</a>
+  <ul class="nav-links">
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#insights">Insights</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <div class="hbg" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mob" id="mob">
+  <a href="#achievements" onclick="cm()">Achievements</a>
+  <a href="#skills" onclick="cm()">Skills</a>
+  <a href="#experience" onclick="cm()">Experience</a>
+  <a href="#education" onclick="cm()">Education</a>
+  <a href="#insights" onclick="cm()">Insights</a>
+  <a href="#contact" onclick="cm()">Contact</a>
+</div>
+
+<!-- HERO -->
+<div class="hero" id="home">
+  <div class="hero-glow"></div>
+  <div class="rv">
+    <div class="hero-name">Tirth<br>Dhoria</div>
+    <div class="hero-sub">Marketing &amp; Content Professional</div>
+    <div class="hero-line"></div>
+    <p class="hero-desc">MBA candidate with 3+ years of experience in digital marketing, content strategy, campaign execution, media analytics, and brand communication. Based in the Netherlands and open to global and remote roles.</p>
+    <div class="hero-pills">
+      <span class="pill">Digital Marketing</span>
+      <span class="pill">Content Strategy</span>
+      <span class="pill">Copywriting</span>
+      <span class="pill">Media Analytics</span>
+      <span class="pill">Campaign Management</span>
+      <span class="pill">Brand Communication</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#experience" class="btn-p">View Experience</a>
+      <button class="btn-o" onclick="openResume()">View Resume</button>
+      <a href="https://www.linkedin.com/in/tirth-2dhoria" class="btn-o" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#contact" class="btn-o">Contact</a>
+    </div>
+  </div>
+  <div class="hero-photo-wrap rv">
+    <div class="photo-card">
+      <img
+        src="https://drive.google.com/thumbnail?id=1Bf84ztNeW0HK-StuiRElKZV3CxUbjDNf&sz=w600"
+        alt="Tirth Dhoria"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="photo-fallback">
+        <span style="font-size:3rem">🧑‍💼</span>
+        <span>Tirth Dhoria</span>
+      </div>
+      <div class="photo-caption">
+        <span class="pc-name">Tirth Dhoria</span>
+        <span class="pc-tag">Marketing Professional</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STAT BAR -->
+<div class="stat-bar rv">
+  <div class="stat"><div class="stat-n">3+</div><div class="stat-l">Years Experience</div></div>
+  <div class="stat"><div class="stat-n">50%+</div><div class="stat-l">Audience Growth</div></div>
+  <div class="stat"><div class="stat-n">12+</div><div class="stat-l">Projects Managed</div></div>
+  <div class="stat"><div class="stat-n">5+</div><div class="stat-l">Client Accounts</div></div>
+  <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Client Retention</div></div>
+</div>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="cw">
+    <div class="sec-label rv">Achievements</div>
+    <h2 class="sec-title rv">Measurable results across campaigns, accounts, and content.</h2>
+    <p class="sec-sub rv">Key outcomes delivered across digital marketing, media analytics, and client management.</p>
+    <div class="ach-grid">
+      <div class="ach-card rv">
+        <div class="ach-ico">📈</div>
+        <div class="ach-num">50%+</div>
+        <div class="ach-title">Event Audience Growth</div>
+        <div class="ach-desc">Grew Talentopedia event attendance from 40 to 50+ per event through targeted campaigns across Instagram, Facebook, and WhatsApp within year one.</div>
+      </div>
+      <div class="ach-card rv">
+        <div class="ach-ico">🤝</div>
+        <div class="ach-num">100%</div>
+        <div class="ach-title">Client Retention Over 4 Years</div>
+        <div class="ach-desc">Maintained full client retention at Mansham Enterprise over four years through consistent delivery, proactive communication, and account management.</div>
+      </div>
+      <div class="ach-card rv">
+        <div class="ach-ico">⏱️</div>
+        <div class="ach-num">100%</div>
+        <div class="ach-title">On-Time Delivery at TAM Media</div>
+        <div class="ach-desc">Delivered all weekly client analytical reports on time throughout tenure at TAM Media, managing multiple concurrent accounts simultaneously.</div>
+      </div>
+      <div class="ach-card rv">
+        <div class="ach-ico">📋</div>
+        <div class="ach-num">12+</div>
+        <div class="ach-title">Concurrent Projects Managed</div>
+        <div class="ach-desc">Managed 12+ simultaneous client accounts at Mansham Enterprise, coordinating cross-functional teams of up to 10 members across all active workstreams.</div>
+      </div>
+      <div class="ach-card rv">
+        <div class="ach-ico">📊</div>
+        <div class="ach-num">5+</div>
+        <div class="ach-title">Client Accounts at TAM Media</div>
+        <div class="ach-desc">Produced weekly brand intelligence reports for 5+ client accounts, translating media sentiment data across TV, digital, and print into campaign positioning input.</div>
+      </div>
+      <div class="ach-card rv">
+        <div class="ach-ico">📚</div>
+        <div class="ach-num">2</div>
+        <div class="ach-title">Published Works</div>
+        <div class="ach-desc">Writing featured in two literary anthologies on Amazon Kindle, reflecting strong written communication skills applied across both professional and broader contexts.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="cw">
+    <div class="sec-label rv">Skills</div>
+    <h2 class="sec-title rv">Core Competencies</h2>
+    <p class="sec-sub rv">Built through real campaigns, client work, and content operations across multiple industries and account types.</p>
+    <div class="skills-grid rv">
+      <div class="skill-group">
+        <div class="sg-label">Marketing</div>
+        <div class="sg-items">
+          <div class="sg-item">Digital Marketing Strategy</div>
+          <div class="sg-item">Social Media Marketing</div>
+          <div class="sg-item">Campaign Planning and Execution</div>
+          <div class="sg-item">Audience Targeting</div>
+          <div class="sg-item">Google Ads</div>
+          <div class="sg-item">Meta Ads Manager</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-label">Content and Writing</div>
+        <div class="sg-items">
+          <div class="sg-item">Copywriting</div>
+          <div class="sg-item">Content Strategy</div>
+          <div class="sg-item">Brand Communication</div>
+          <div class="sg-item">Editorial Writing</div>
+          <div class="sg-item">SEO Fundamentals</div>
+          <div class="sg-item">AI-Assisted Content Workflows</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-label">Analytics and Research</div>
+        <div class="sg-items">
+          <div class="sg-item">Google Analytics</div>
+          <div class="sg-item">Media Sentiment Analysis</div>
+          <div class="sg-item">Campaign Performance Tracking</div>
+          <div class="sg-item">CTR, CPC and Conversion Monitoring</div>
+          <div class="sg-item">Market Research</div>
+          <div class="sg-item">Analytical Reporting</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-label">Tools and Operations</div>
+        <div class="sg-items">
+          <div class="sg-item">Canva</div>
+          <div class="sg-item">MS Excel</div>
+          <div class="sg-item">PowerPoint</div>
+          <div class="sg-item">Project Management</div>
+          <div class="sg-item">Stakeholder Communication</div>
+          <div class="sg-item">Cross-functional Coordination</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="cw">
+    <div class="sec-label rv">Experience</div>
+    <h2 class="sec-title rv">Professional Background</h2>
+    <p class="sec-sub rv">3+ years of hands-on experience across digital marketing, media intelligence, and client management.</p>
+    <div class="exp-list">
+
+      <div class="exp-card rv">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Founder and Digital Marketing Lead</div>
+            <div class="exp-co">Talentopedia, Gujarat, India</div>
+          </div>
+          <div class="exp-meta">Feb 2020 to Mar 2023</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Built the brand identity and complete digital presence from zero across Instagram, Facebook, and WhatsApp</li>
+          <li>Designed and executed event-specific marketing campaigns for 10+ events, growing average attendance by 50%+ within year one</li>
+          <li>Managed the full content production pipeline including brief creation, copywriting, visual design, scheduling, and post-campaign review</li>
+          <li>Monitored reach, engagement, and conversion metrics to analyse performance and improve subsequent campaign strategies</li>
+          <li>Coordinated promotional partnerships with student organisations and local media to extend event reach beyond owned channels</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="etag">Digital Marketing</span><span class="etag">Copywriting</span><span class="etag">Campaign Strategy</span><span class="etag">Social Media</span><span class="etag">Content Production</span>
+        </div>
+      </div>
+
+      <div class="exp-card rv">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">News Analyst</div>
+            <div class="exp-co">TAM Media Research, Gujarat, India</div>
+          </div>
+          <div class="exp-meta">Aug 2022 to Jan 2023</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Monitored media output across TV, digital, and print for 5+ client accounts, identifying sentiment shifts and reputational signals on a weekly basis</li>
+          <li>Produced structured analytical reports and media summaries used directly by client communication teams to refine campaign positioning</li>
+          <li>Supported 3 clients in navigating adverse media situations by producing rapid-response analysis decks for faster communication decisions</li>
+          <li>Maintained a 100% on-time delivery record throughout tenure while managing multiple concurrent client accounts</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="etag">Media Analytics</span><span class="etag">Research</span><span class="etag">Reporting</span><span class="etag">Brand Intelligence</span>
+        </div>
+      </div>
+
+      <div class="exp-card rv">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Project Manager</div>
+            <div class="exp-co">Mansham Enterprise, Gujarat, India</div>
+          </div>
+          <div class="exp-meta">Jul 2021 to Apr 2025</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Managed client-facing communications across 12+ concurrent project accounts, producing proposals, status reports, and stakeholder updates</li>
+          <li>Coordinated cross-functional teams of up to 10 members, ensuring clear task alignment and timely delivery across all workstreams</li>
+          <li>Maintained 100% client retention over 4 years through proactive communication and consistent expectation management</li>
+          <li>Developed strong professional writing and presentation skills through regular client-facing documentation and reporting</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="etag">Client Management</span><span class="etag">Communication</span><span class="etag">Operations</span><span class="etag">Stakeholder Management</span>
+        </div>
+      </div>
+
+      <div class="exp-card rv">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Campus Ambassador</div>
+            <div class="exp-co">Apogee, BITS Pilani, India</div>
+          </div>
+          <div class="exp-meta">Mar 2022 to Apr 2022</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Promoted APOGEE across universities through digital campaigns and peer network-building, reaching 100+ students</li>
+          <li>Coordinated cross-campus communication and promotional activities to drive event visibility and registrations</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="etag">Digital Outreach</span><span class="etag">Community</span><span class="etag">Marketing</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="cw">
+    <div class="sec-label rv">Education</div>
+    <h2 class="sec-title rv">Academic Qualifications</h2>
+    <p class="sec-sub rv">Business strategy and innovation management combined with a humanities background in research, writing, and analysis.</p>
+    <div class="edu-grid">
+      <div class="edu-card rv">
+        <div class="edu-ico">🎓</div>
+        <div class="edu-period">2025 to Ongoing</div>
+        <div class="edu-deg">MBA in Entrepreneurship and Innovation Management</div>
+        <div class="edu-inst">Wittenborg University of Applied Sciences, Netherlands</div>
+        <div class="edu-desc">Focus areas include venture strategy, digital business models, market entry, and leadership in a global business context.</div>
+        <div class="edu-tags"><span class="edu-tag">Strategy</span><span class="edu-tag">Entrepreneurship</span><span class="edu-tag">Innovation</span></div>
+      </div>
+      <div class="edu-card rv">
+        <div class="edu-ico">📖</div>
+        <div class="edu-period">2018 to 2021</div>
+        <div class="edu-deg">BA in English Literature</div>
+        <div class="edu-inst">Maharaja Sayajirao University, Vadodara, India</div>
+        <div class="edu-desc">Developed strong foundations in critical analysis, research methodology, and written communication, directly applicable to content strategy and copywriting work.</div>
+        <div class="edu-tags"><span class="edu-tag">Writing</span><span class="edu-tag">Research</span><span class="edu-tag">Analysis</span></div>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="certs-title">Certifications</div>
+      <div class="certs-grid">
+        <div class="cert-card"><div class="cert-issuer">Internshala</div><div class="cert-name">Digital Marketing</div><div class="cert-date">Sep 2021 to Dec 2021</div></div>
+        <div class="cert-card"><div class="cert-issuer">Yale University</div><div class="cert-name">Introduction to Psychology</div><div class="cert-date">Apr 2024 to Jul 2024</div></div>
+        <div class="cert-card"><div class="cert-issuer">Internshala</div><div class="cert-name">UI/UX Design</div><div class="cert-date">Sep 2023 to Feb 2024</div></div>
+        <div class="cert-card"><div class="cert-issuer">Internshala</div><div class="cert-name">Creative Writing</div><div class="cert-date">May 2021 to Jul 2021</div></div>
+        <div class="cert-card"><div class="cert-issuer">Internshala</div><div class="cert-name">Photography</div><div class="cert-date">May 2023 to Jul 2023</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- INSIGHTS -->
+<section id="insights">
+  <div class="cw">
+    <div class="sec-label rv">Insights</div>
+    <h2 class="sec-title rv">Strategy and Campaign Thinking</h2>
+    <p class="sec-sub rv">Practical perspectives on audience growth, content performance, and building sustainable marketing systems, drawn from real campaign experience.</p>
+    <div class="insights-grid rv" style="margin-top:2rem">
+
+      <div class="blog-card">
+        <div class="blog-header" onclick="toggleBlog(1)">
+          <div class="blog-title">How I Grew Event Attendance by 50% in Year One at Talentopedia</div>
+          <div class="blog-meta">Event Growth</div>
+        </div>
+        <div class="blog-excerpt" onclick="toggleBlog(1)">A practical breakdown of how Talentopedia grew from zero to 50+ attendees per event using repeatable content systems, multi-channel execution, and consistent measurement.</div>
+        <div class="blog-content" id="blog1">
+          <h3>The Challenge</h3>
+          <p>When I launched Talentopedia in February 2020, I had zero attendees and one clear problem: local artists wanted a stage but lacked visibility. Most event platforms chase viral posts. I could not afford to. So I built a repeatable system for turning content into attendance.</p>
+          <p><strong>Result: 50%+ growth in average event attendance within the first year.</strong></p>
+          <h3>The Shift: From Posts to Systems</h3>
+          <h4>1. Define What Content Actually Does</h4>
+          <p>I stopped thinking about good posts and started thinking about conversion pathways. For Talentopedia, every post had one job: move someone from aware to buying a ticket.</p>
+          <h4>2. Build Repeatable Formats</h4>
+          <p>Virality is unpredictable. Systems are not. I created 3 to 4 formats that worked consistently:</p>
+          <ul>
+            <li><strong>Artist Spotlights:</strong> Carousels introducing 2 to 3 artists. Performed 3x better than generic announcements.</li>
+            <li><strong>What to Expect Breakdowns:</strong> Event flow, timing, and venue details. Reduced barriers to attendance.</li>
+            <li><strong>Community Stories:</strong> Posts from previous attendees. Real social proof. Generated 2x the engagement of promotional content.</li>
+            <li><strong>Countdown Posts:</strong> 7 days, 3 days, 1 day before the event. Simple, consistent, effective.</li>
+          </ul>
+          <h4>3. Consistency Over Virality</h4>
+          <p>What scales is not one great post. It is 50 solid posts executed consistently across channels. Instagram (4 to 5 posts per week), Facebook (2 to 3 posts per week), WhatsApp (community updates). By month 3, people recognised the brand. By month 12, they showed up reliably.</p>
+          <h4>4. Measure What Moves the Needle</h4>
+          <p>I tracked one primary question: did this content lead to tickets sold? When it did not, I changed the approach.</p>
+          <h3>Results</h3>
+          <ul>
+            <li>Month 1 to 3: Average 40 attendees per event</li>
+            <li>Month 6 to 9: Average 45 attendees per event</li>
+            <li>Month 12 and beyond: Average 50 to 55 attendees per event</li>
+            <li><strong>Overall: 50%+ increase within 12 months</strong></li>
+          </ul>
+          <h3>The Takeaway</h3>
+          <p><strong>Most content fails because it is built on hope rather than process.</strong> Building repeatable systems and measuring outcomes consistently is what drives sustainable audience growth.</p>
+        </div>
+        <div class="blog-footer">
+          <button class="blog-toggle" id="togbtn1" onclick="toggleBlog(1)">Read Full Post</button>
+          <div class="blog-stats">5 min read</div>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-header" onclick="toggleBlog(2)">
+          <div class="blog-title">The Strategy Behind Content That Converts</div>
+          <div class="blog-meta">Content Strategy</div>
+        </div>
+        <div class="blog-excerpt" onclick="toggleBlog(2)">Most content does not convert because the strategy behind it is unclear. A practical framework for moving audiences from awareness to action, based on managing 200+ pieces across multi-account campaigns.</div>
+        <div class="blog-content" id="blog2">
+          <h3>The Core Problem</h3>
+          <p><strong>Most content does not work.</strong> A post can reach 500 people and convert zero. The issue is rarely the writing. It is usually the strategy behind it.</p>
+          <h3>Common Mistakes</h3>
+          <h4>Optimising for engagement rather than outcomes</h4>
+          <p>At TAM Media, analysing 5+ client accounts, I frequently saw brands producing content that performed well on surface metrics but did not move business results.</p>
+          <h4>Leading with what the brand wants to say</h4>
+          <p>Audiences respond to content that addresses what they want to know, not what a brand wants to announce.</p>
+          <h4>Skipping audience research</h4>
+          <p>Assuming all audience segments care about the same things leads to content that resonates with no one in particular.</p>
+          <h3>A Practical Framework</h3>
+          <h4>1. Start with the conversion goal</h4>
+          <p>Before writing anything, define the decision you want someone to make. Every Talentopedia post had one of three goals: Awareness, Consideration, or Decision. Each requires different content.</p>
+          <h4>2. Understand specific audience barriers</h4>
+          <p>For Talentopedia audiences, the main barrier was not knowing who was performing. Addressing that directly with artist spotlights doubled conversion rates without changing post frequency.</p>
+          <h4>3. Match content to the conversion stage</h4>
+          <ul>
+            <li><strong>Awareness:</strong> Why should I pay attention to this?</li>
+            <li><strong>Consideration:</strong> Is this right for me?</li>
+            <li><strong>Decision:</strong> How do I take action?</li>
+          </ul>
+          <h4>4. Prioritise clarity over creativity</h4>
+          <p>A clear, specific message consistently outperforms a clever but vague one. The audience should know exactly what they are being invited to do.</p>
+          <h4>5. Track conversion, not just engagement</h4>
+          <p>Artist Spotlights converted at 8 to 12%. Generic announcements converted at 2 to 3%. 48-hour countdown posts converted at 15%+. Data like this shapes every future decision.</p>
+          <h3>The Takeaway</h3>
+          <p><strong>Content that converts is not necessarily better written. It is clearer and more focused on a specific outcome.</strong> Start with the goal, build the content backwards, and optimise based on what the data shows.</p>
+        </div>
+        <div class="blog-footer">
+          <button class="blog-toggle" id="togbtn2" onclick="toggleBlog(2)">Read Full Post</button>
+          <div class="blog-stats">6 min read</div>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-header" onclick="toggleBlog(3)">
+          <div class="blog-title">Why Consistent Systems Outperform Viral Campaigns</div>
+          <div class="blog-meta">Growth Strategy</div>
+        </div>
+        <div class="blog-excerpt" onclick="toggleBlog(3)">Viral moments attract attention but rarely build sustainable growth. A look at why repeatable marketing systems consistently outperform one-off campaigns, based on 3+ years of multi-channel execution.</div>
+        <div class="blog-content" id="blog3">
+          <h3>The Common Misconception</h3>
+          <p>Most marketing teams focus on generating viral content. The assumption is that one high-performing post will create lasting momentum. In practice, it rarely does.</p>
+          <p>At Talentopedia, one artist spotlight post reached 15,000 impressions. Attendance at that event was 48 people, consistent with the average. Meanwhile, the regular non-viral content was converting at 8 to 12% of those reached. <strong>The data made the conclusion clear: consistency outperforms virality.</strong></p>
+          <h3>Why Systems Deliver Better Results</h3>
+          <h4>Recognition builds over time</h4>
+          <p>By month six, audiences recognised Talentopedia and expected regular updates. New followers came through recommendations rather than viral spikes. That is the result of systematic execution, not a lucky post.</p>
+          <h4>Compounding returns</h4>
+          <p>A single viral post generates a temporary spike. A system converting at 8% generates predictable, stackable results month after month. Each new channel or format added to the system multiplies those returns.</p>
+          <h4>Operational efficiency</h4>
+          <p>Using a content calendar planned four weeks ahead, repeatable post templates, a clear approval process, and a weekly performance review, I produced 200+ posts per year without significant workflow issues.</p>
+          <h3>The Practical Framework</h3>
+          <h4>Content Calendar</h4>
+          <p>Plan four weeks ahead with defined conversion themes. Predictable scheduling supports audience expectations and reduces last-minute production pressure.</p>
+          <h4>Repeatable Formats</h4>
+          <p>Three to four tested formats cover the majority of campaign needs. Artist Spotlights at 8%, Community Stories at 7%, 48-hour Countdowns at 15%. Invest more in what performs and less in what does not.</p>
+          <h4>Three-Month Commitment</h4>
+          <p>Month one is execution. Month two is measurement. Month three is optimisation. By month four, consistent reach, predictable engagement, and improving conversion rates are achievable outcomes.</p>
+          <h3>The Takeaway</h3>
+          <p><strong>Virality is unpredictable. Systems are not.</strong> Defining a clear goal, building a repeatable process, measuring outcomes, and optimising over time is what drives sustainable marketing performance.</p>
+        </div>
+        <div class="blog-footer">
+          <button class="blog-toggle" id="togbtn3" onclick="toggleBlog(3)">Read Full Post</button>
+          <div class="blog-stats">6 min read</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec-label rv" style="justify-content:center">Contact</div>
+  <h2 class="sec-title rv" style="text-align:center;max-width:none;margin-bottom:.65rem">Open to new opportunities.</h2>
+  <p class="sec-sub rv" style="text-align:center;max-width:430px;margin:0 auto 2rem">Seeking roles in digital marketing, content strategy, copywriting, and campaign management. Open to remote and global positions.</p>
+  <div class="contact-box rv">
+    <a href="mailto:tirthdhoria2000@gmail.com" class="contact-email">tirthdhoria2000@gmail.com</a>
+    <div class="clinks">
+      <a href="https://www.linkedin.com/in/tirth-2dhoria" class="clink" target="_blank" rel="noopener">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="mailto:tirthdhoria2000@gmail.com" class="clink">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email
+      </a>
+      <a href="tel:+31626198485" class="clink">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.92 1.18 2 2 0 012.92 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +31 6 261 98485
+      </a>
+      <button class="btn-p" onclick="openResume()" style="font-size:.75rem;padding:.55rem 1.1rem">View Resume</button>
+    </div>
+    <p class="contact-loc">Netherlands, open to Remote and Global Roles</p>
+  </div>
+</section>
+
+<footer>
+  <div>2025 Tirth Dhoria</div>
+  <div>Built for <span>clarity</span>. Designed to impress.</div>
+</footer>
+
+<!-- RESUME MODAL -->
+<div class="modal-overlay" id="resumeModal" onclick="handleOverlay(event)">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>Tirth Dhoria — Resume</h3>
+      <button class="mcls" onclick="closeResume()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="r-name">Tirth Dhoria</div>
+      <div class="r-role">Marketing and Content Professional</div>
+      <div class="r-contact">tirthdhoria2000@gmail.com &nbsp;·&nbsp; +31 6 26198485 &nbsp;·&nbsp; linkedin.com/in/tirth-2dhoria &nbsp;·&nbsp; Netherlands</div>
+      <div class="rdv"></div>
+      <div class="rs">Profile</div>
+      <p class="rp">MBA candidate in Entrepreneurship and Innovation Management with 3+ years of experience in digital marketing, content strategy, campaign execution, media analytics, and brand communication. Proven track record delivering measurable results across multi-channel campaigns, analytical reporting, and client management. Actively seeking full-time roles or graduate internships in digital marketing, content strategy, or campaign management.</p>
+      <div class="rdv"></div>
+      <div class="rs">Experience</div>
+      <div class="rj">
+        <div class="rjt">Founder and Digital Marketing Lead, Talentopedia</div>
+        <div class="rjc">Gujarat, India, Feb 2020 to Mar 2023</div>
+        <ul class="rjd">
+          <li>Designed and executed multi-channel campaigns across Instagram, Facebook, and WhatsApp for 10+ events</li>
+          <li>Grew average event attendance from 40 to 50+, a 50%+ increase within year one</li>
+          <li>Managed full content production pipeline including briefs, copywriting, design, scheduling, and post-campaign review</li>
+          <li>Monitored reach, engagement, and conversion metrics to optimise subsequent campaign strategies</li>
+        </ul>
+      </div>
+      <div class="rj">
+        <div class="rjt">News Analyst, TAM Media Research</div>
+        <div class="rjc">Gujarat, India, Aug 2022 to Jan 2023</div>
+        <ul class="rjd">
+          <li>Monitored media output across TV, digital, and print for 5+ client accounts weekly</li>
+          <li>Produced stakeholder-ready analytical reports informing client communication and campaign strategy</li>
+          <li>Supported 3 clients with rapid-response analysis during adverse media situations</li>
+          <li>Maintained 100% on-time delivery throughout tenure managing multiple concurrent accounts</li>
+        </ul>
+      </div>
+      <div class="rj">
+        <div class="rjt">Project Manager, Mansham Enterprise</div>
+        <div class="rjc">Gujarat, India, Jul 2021 to Apr 2025</div>
+        <ul class="rjd">
+          <li>Managed 12+ concurrent client accounts with full client-facing responsibility</li>
+          <li>Coordinated cross-functional teams of up to 10 members across project workstreams</li>
+          <li>Achieved 100% client retention over 4 years through proactive communication and delivery</li>
+        </ul>
+      </div>
+      <div class="rj">
+        <div class="rjt">Campus Ambassador, Apogee, BITS Pilani</div>
+        <div class="rjc">India, Mar 2022 to Apr 2022</div>
+        <ul class="rjd">
+          <li>Promoted APOGEE across universities through digital campaigns and network-building, reaching 100+ students</li>
+        </ul>
+      </div>
+      <div class="rdv"></div>
+      <div class="rs">Education</div>
+      <div class="rj"><div class="rjt">MBA, Entrepreneurship and Innovation Management</div><div class="rjc">Wittenborg University of Applied Sciences, Netherlands, 2025 to Ongoing</div></div>
+      <div class="rj"><div class="rjt">BA, English Literature</div><div class="rjc">Maharaja Sayajirao University, India, 2018 to 2021</div></div>
+      <div class="rdv"></div>
+      <div class="rs">Publications</div>
+      <div class="rj"><div class="rjt">Enchanted! Enchanting: An Anthology</div><div class="rjc">Amazon Kindle, Oct 2020</div></div>
+      <div class="rj"><div class="rjt">2020: A New Beginning, An Anthology</div><div class="rjc">Amazon Kindle, Sep 2020</div></div>
+      <div class="rdv"></div>
+      <div class="rs">Key Skills</div>
+      <div class="rsk" style="margin-bottom:.8rem">
+        <span class="rskp">Digital Marketing</span><span class="rskp">Copywriting</span><span class="rskp">Content Strategy</span><span class="rskp">Social Media Marketing</span><span class="rskp">Campaign Planning</span><span class="rskp">Brand Communication</span><span class="rskp">Google Ads</span><span class="rskp">Meta Ads Manager</span><span class="rskp">Google Analytics</span><span class="rskp">Market Research</span><span class="rskp">Analytical Reporting</span><span class="rskp">AI Workflows</span><span class="rskp">Project Management</span><span class="rskp">Canva</span><span class="rskp">MS Excel</span>
+      </div>
+      <div class="rdv"></div>
+      <div class="rs">Certifications</div>
+      <div style="font-size:.71rem;color:var(--mut);line-height:1.9">
+        Digital Marketing, Internshala (2021) &nbsp;·&nbsp; Introduction to Psychology, Yale University (2024) &nbsp;·&nbsp; UI/UX Design, Internshala (2023) &nbsp;·&nbsp; Creative Writing, Internshala (2021) &nbsp;·&nbsp; Photography, Internshala (2023)
+      </div>
+    </div>
+    <div class="mfoot">
+      <button class="btn-o" onclick="closeResume()">Close</button>
+      <button class="btn-p" onclick="window.print()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download / Print
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) setTimeout(() => e.target.classList.add('on'), 50) });
+}, {threshold:0.06, rootMargin:'0px 0px -28px 0px'});
+document.querySelectorAll('.rv').forEach((el, i) => {
+  el.style.transitionDelay = (i % 4) * 0.06 + 's';
+  obs.observe(el);
+});
+function toggleMenu() { document.getElementById('mob').classList.toggle('open') }
+function cm() { document.getElementById('mob').classList.remove('open') }
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').style.background =
+    window.scrollY > 60 ? 'rgba(248,244,238,.98)' : 'rgba(248,244,238,.93)';
+});
+function openResume() { document.getElementById('resumeModal').classList.add('open'); document.body.style.overflow='hidden' }
+function closeResume() { document.getElementById('resumeModal').classList.remove('open'); document.body.style.overflow='' }
+function handleOverlay(e) { if(e.target===document.getElementById('resumeModal')) closeResume() }
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeResume() });
+function toggleBlog(n) {
+  const content = document.getElementById('blog' + n);
+  const btn = document.getElementById('togbtn' + n);
+  const isOpen = content.classList.toggle('show');
+  btn.textContent = isOpen ? 'Show Less' : 'Read Full Post';
+  btn.classList.toggle('open', isOpen);
+}
+</script>
+</body>
+</html>
